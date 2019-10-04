@@ -70,7 +70,7 @@ def load_satetile_image(batch_size=128, dataset='train'):
 
     # 返回的img_list转成了 np.array的格式
     X_train = np.array(img_list)
-    Y_train = to_categorical(label_list, 9)
+    Y_train = to_categorical(label_list, 21)
     # print('to_categorical之后Y_train的类型和形状:', type(Y_train), Y_train.shape)
 
     # 加载数据的时候 重新排序
