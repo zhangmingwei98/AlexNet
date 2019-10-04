@@ -13,10 +13,10 @@ from keras.utils import to_categorical
 # 定义一下训练中所需要的一些变量
 # 站在现在的角度来看AlexNet模型的话 比较简单 所以可以用较大的batch_size
 batch_size = 128
-img_high = 100
-img_width = 100
+img_high = 256
+img_width = 256
 Channel = 3
-label = 9
+label = 21
 
 # 定义输入图像的占位符
 inputs = tf.placeholder(tf.float32, [batch_size, img_high, img_width, Channel], name='inputs')
@@ -44,7 +44,7 @@ def load_satetile_image(batch_size=128, dataset='train'):
     dir_counter = 0
 
     if dataset == 'train':
-        path = '../Dataset/baidu/train_image/train'
+        path = '/home/jingweipeng/zmw/NAS-CRSI/UCMerced_LandUse/train'
 
         # 对路径下的所有子文件夹中的所有jpg文件进行读取并存入到一个list中
         for child_dir in os.listdir(path):
@@ -56,7 +56,7 @@ def load_satetile_image(batch_size=128, dataset='train'):
 
             dir_counter += 1
     else:
-        path = '../Dataset/baidu/valid_image/valid'
+        path = '/home/jingweipeng/zmw/NAS-CRSI/UCMerced_LandUse/test'
 
         # 对路径下的所有子文件夹中的所有jpg文件进行读取并存入到一个list中
         for child_dir in os.listdir(path):
